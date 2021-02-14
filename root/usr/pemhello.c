@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-out(port, val)
+void out(int port, int val)
 {
     putchar(val);
 }
@@ -17,7 +17,7 @@ int write(int f, char *s, int n)
   
 int main()
 {
-    setup_default_uart();
+  setup_default_uart();
 
   write(1, "Hello world.\n", 13);
   //asm(HALT);
