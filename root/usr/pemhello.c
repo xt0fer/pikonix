@@ -4,7 +4,8 @@
 
 void out(int port, int val)
 {
-    putchar(val);
+  //putchar(val);
+  fputc(val, port);
 }
 
 int write(int f, char *s, int n)
