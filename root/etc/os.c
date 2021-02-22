@@ -195,10 +195,13 @@ rfsd = -1; // XXX will be set on mount, XXX total redesign?
 
 // *** Code ***
 
+
+// REPLACE THESE
 void *memcpy(void *d, void *s, uint n) { asm(LL,8); asm(LBL, 16); asm(LCL,24); asm(MCPY); asm(LL,8); }
 void *memset(void *d, uint c,  uint n) { asm(LL,8); asm(LBLB,16); asm(LCL,24); asm(MSET); asm(LL,8); }
 void *memchr(void *s, uint c,  uint n) { asm(LL,8); asm(LBLB,16); asm(LCL,24); asm(MCHR); }
 
+// IMPLEMENT THESE
 int in(port)    { asm(LL,8); asm(BIN); }
 out(port, val)  { asm(LL,8); asm(LBL,16); asm(BOUT); }
 ivec(void *isr) { asm(LL,8); asm(IVEC); }
